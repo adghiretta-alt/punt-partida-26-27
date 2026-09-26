@@ -13,14 +13,12 @@ public class PR111Files {
         gestionarArxius(camiDirectori);
     }
 
-    // Rep la ruta del directori on cal crear la carpeta myFiles
     public static void gestionarArxius(String camiDirectori) {
 
-        // Ruta de la carpeta myFiles dins del directori rebut
         Path carpetaMyFiles = Paths.get(camiDirectori, "myFiles");
 
         try {
-            // 1. Crear carpeta myFiles (i les intermèdies si cal)
+            // 1. Crear carpeta myFiles 
             Files.createDirectories(carpetaMyFiles);
 
             // 2. Crear file1.txt i file2.txt
@@ -38,7 +36,7 @@ public class PR111Files {
                 }
             }
 
-            // 4. Renombrar file2.txt → renamedFile.txt
+            // 4. Renombrar file2.txt a renamedFile.txt
             Path renamed = carpetaMyFiles.resolve("renamedFile.txt");
             Files.move(file2, renamed, StandardCopyOption.REPLACE_EXISTING);
 
